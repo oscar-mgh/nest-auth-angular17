@@ -31,7 +31,8 @@ export class AuthController {
     return this.authService.register(registerUserDto);
   }
 
-  @Get()
+  @UseGuards(AuthGuard)
+  @Get('users')
   findAll(): Promise<User[]> {
     return this.authService.findAll();
   }
