@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: mean-db
+    image: mongo:5.0.16
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
+    restart: always
